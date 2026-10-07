@@ -7,6 +7,9 @@ set -e
 
 # Convert a simple list to json
 
+# Requires: jq
+# Optional: gum
+
 # Usage: $0 KEY_NAME SRC_FILE TARGET_JSON
 # Example: ./jsonify.sh "mylist" "list.txt" "list.json"
 
