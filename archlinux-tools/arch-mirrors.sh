@@ -1,14 +1,6 @@
 #!/usr/bin/env bash
 set -e
 
-BLUE='\033[0;34m'
-GREEN='\033[0;32m'
-RED='\033[0;31m'
-NC='\033[0m'
-
-COUNTRY="$1"
-DETECT_OS=$([ -x "$(command -v pacman)" ] && pacman -Q base >/dev/null 2>&1 && echo "archlinux-$(uname -m)")
-
 ########################
 ##### arch-mirrors #####
 ########################
@@ -25,6 +17,14 @@ DETECT_OS=$([ -x "$(command -v pacman)" ] && pacman -Q base >/dev/null 2>&1 && e
 #	   - reflector
 #	   - curl
 #	   - git
+
+BLUE='\033[0;34m'
+GREEN='\033[0;32m'
+RED='\033[0;31m'
+NC='\033[0m'
+
+COUNTRY="$1"
+DETECT_OS=$([ -x "$(command -v pacman)" ] && pacman -Q base >/dev/null 2>&1 && echo "archlinux-$(uname -m)")
 
 logger_info() {
 	echo -e "${BLUE}[INFO]${NC} $1" >&2
