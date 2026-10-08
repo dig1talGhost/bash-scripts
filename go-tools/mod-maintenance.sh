@@ -28,11 +28,6 @@ logger_error() {
 validate_license() {
 	logger_info "Validating LICENSE..."
 
-}
-
-function check_license() {
-	logger_info "Validating LICENSE..."
-
 	if ! command -v "go-licenses" >/dev/null 2>&1; then
 		go install github.com/google/go-licenses/v2@latest
 	fi
@@ -54,7 +49,7 @@ if ! command -v "go" >/dev/null 2>&1; then
 fi
 
 if [[ -f "./LICENSE" ]]; then
-	check_license
+	validate_license
 fi
 
 logger_info "Updating module dependencies..."
